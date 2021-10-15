@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practical14</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 350px;
+        height: 350px;
+      }
+      p {
+        color:red;
+        font-size: 60px;
+      }
+      
+    .button {
+        height: auto;
+        margin-top: 40px;
+        width: 100%;
+        text-align: center;
+      }
+      button:hover {
+        cursor: pointer;
+        border: none;
+        color:black;
+        background-color:green ;
+      }
+      button {
+        font-size: 40px;
+        width: 80px;
+        height: 60px;
+      }
+      #value {
+        font-size: 30px;
+        color:blue;
+        margin: 0px 50px; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <P>COUNTER</P>
+      <div class="button">
+        <button id="increment">+</button>
+        <span id="value"></span>
+        <button id="decrement">-</button>
+      </div>
+    </div>
+    <script>
+      var num = 0;
+      function displayValue(){
+        document.getElementById("value").innerText = `${num}`;
+      }
+      displayValue();
+      var inc = document.getElementById("increment");
+      inc.addEventListener("click", function () {
+        num = num + 1;
+        displayValue();
+        if (num != 0)  {
+          dec.disabled = FALSE;
+        }
+      });
+      var dec = document.getElementById("decrement");
+      dec.addEventListener("click", function () {
+        if (num == 0) {
+          dec.disabled = TRUE;
+        }
+        else {
+          num = num - 1;
+        }
+        displayValue();
+      });
+    </script>
+  </body>
+</html>
